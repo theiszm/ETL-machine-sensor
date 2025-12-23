@@ -1,7 +1,8 @@
 import pandas as pd
 from pathlib import Path
 
-DATA_PATH = Path("data_raw/sensor_readings.csv")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = PROJECT_ROOT / "data_raw" / "sensor_readings.csv"
 
 def extract_sensor_data():
     
