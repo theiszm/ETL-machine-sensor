@@ -1,8 +1,9 @@
+import sys
 import pandas as pd
 from pathlib import Path
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(PROJECT_ROOT))
 REJECTED_PATH = PROJECT_ROOT / "transform" / "rejected_rows.csv"
 
 
@@ -103,7 +104,6 @@ def transform_sensor_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    # Manual test hook
     from extract.extract_sensor_data import extract_sensor_data
 
     raw_df = extract_sensor_data()
