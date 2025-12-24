@@ -1,11 +1,13 @@
+import sys
 import sqlite3
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(PROJECT_ROOT))
 
 from extract.extract_sensor_data import extract_sensor_data
 from transform.transform_sensor_data import transform_sensor_data
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = PROJECT_ROOT / "db" / "sensor_data.db"
 
 
